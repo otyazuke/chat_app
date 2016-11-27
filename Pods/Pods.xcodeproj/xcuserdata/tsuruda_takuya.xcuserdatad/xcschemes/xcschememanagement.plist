@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>21ED107F95C348EFC247449CE103D6D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>59CDDB315DD2B098E0CD9ED56B026F4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCB2EFBAF7EEBCAAA25EFD3D097ECBD6</key>
+		<key>92BB131FA876445E027D20AE23EA7B5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

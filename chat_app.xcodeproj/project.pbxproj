@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8606498E1DEB28D900B8814A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8606498D1DEB28D900B8814A /* GoogleService-Info.plist */; };
 		86D6E4F31DE40173005C4F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D6E4F21DE40173005C4F21 /* AppDelegate.swift */; };
 		86D6E4F51DE40173005C4F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D6E4F41DE40173005C4F21 /* ViewController.swift */; };
 		86D6E4F81DE40173005C4F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D6E4F61DE40173005C4F21 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		5BD5FFD150CE905DC0D80E61 /* Pods-chat_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chat_app/Pods-chat_app.debug.xcconfig"; sourceTree = "<group>"; };
 		5C3724B3AA687DC8B4D558B8 /* Pods-chat_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-chat_app/Pods-chat_app.release.xcconfig"; sourceTree = "<group>"; };
+		8606498D1DEB28D900B8814A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		863587331DEB089C000E0867 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "../../../../Library/Developer/Xcode/DerivedData/chat_app-feykjungolzewgaobzjsmreyuroq/Build/Products/Debug-iphonesimulator/JSQMessagesViewController/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
 		863587351DEB08AE000E0867 /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = "../../../../Library/Developer/Xcode/DerivedData/chat_app-feykjungolzewgaobzjsmreyuroq/Build/Products/Debug-iphonesimulator/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"; sourceTree = "<group>"; };
 		86D6E4EF1DE40173005C4F21 /* chat_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				86D6E4F91DE40173005C4F21 /* Assets.xcassets */,
 				86D6E4FB1DE40173005C4F21 /* LaunchScreen.storyboard */,
 				86D6E4FE1DE40173005C4F21 /* Info.plist */,
+				8606498D1DEB28D900B8814A /* GoogleService-Info.plist */,
 			);
 			path = chat_app;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D6E4FD1DE40173005C4F21 /* LaunchScreen.storyboard in Resources */,
+				8606498E1DEB28D900B8814A /* GoogleService-Info.plist in Resources */,
 				86D6E4FA1DE40173005C4F21 /* Assets.xcassets in Resources */,
 				86D6E4F81DE40173005C4F21 /* Main.storyboard in Resources */,
 			);

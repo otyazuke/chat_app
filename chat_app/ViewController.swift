@@ -8,18 +8,23 @@
 
 import UIKit
 import JSQMessagesViewController
+import Firebase
+import FirebaseDatabase
 
 class ViewController: JSQMessagesViewController {
     
-    var messages: [JSQMessage] = [
-        JSQMessage(senderId: "Tsuru", displayName: "tsuru", text: "こんにちは！"),
-        JSQMessage(senderId: "Gami", displayName: "gami", text: "こんにちは！！")
-    ]
+    var messages = [JSQMessage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         senderDisplayName = "tsuru"
         senderId = "Tsuru"
+        let ref = FIRDatabase.database().reference()
+        ref.observe(.value, with: { snapshot in
+            guard let dic = snapshot.value as? Dictionary<String, AnyObject> else {
+                return
+            }
+        })
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
@@ -61,6 +66,12 @@ class ViewController: JSQMessagesViewController {
             diameter: 30)
     }
     
+    // 送信ボタンを押した時の処理
+    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        inputToolbar.contentView.textView.text = ""
+        let ref = FIRDatabase.database().reference()
+        ref.child("messages").childByAutoId().setValue(["senderId": senderId, "text": text, "displayName": senderDisplayName])
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
