@@ -130,6 +130,7 @@
 				TargetAttributes = {
 					86D6E4EE1DE40173005C4F21 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 49SK9NN282;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -342,6 +343,8 @@
 			baseConfigurationReference = 5BD5FFD150CE905DC0D80E61 /* Pods-chat_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49SK9NN282;
 				INFOPLIST_FILE = chat_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takuya.chat-app";
@@ -355,6 +358,8 @@
 			baseConfigurationReference = 5C3724B3AA687DC8B4D558B8 /* Pods-chat_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49SK9NN282;
 				INFOPLIST_FILE = chat_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takuya.chat-app";
