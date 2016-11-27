@@ -24,6 +24,17 @@ class ViewController: JSQMessagesViewController {
             guard let dic = snapshot.value as? Dictionary<String, AnyObject> else {
                 return
             }
+            guard let posts = dic["messages"] as? Dictionary<String, Dictionary<String, String>> else {
+                return
+            }
+            // messagesを再構成
+            self.messages = posts.values.map { dic in
+                let senderId = dic["senderId"] ?? ""
+                let text = dic["text"] ?? ""
+                let displayName = dic["displayName"] ?? ""
+                return JSQMessage(senderId: senderId, displayName: displayName, text: text)
+            }
+            self.collectionView.reloadData()
         })
     }
     
