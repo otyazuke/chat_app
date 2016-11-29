@@ -24,16 +24,29 @@ class ViewController: JSQMessagesViewController {
             guard let dic = snapshot.value as? Dictionary<String, AnyObject> else {
                 return
             }
-            guard let posts = dic["messages"] as? Dictionary<String, Dictionary<String, String>> else {
+            guard let posts = dic["messages"] as? Dictionary<String, Dictionary<String, AnyObject>> else {
                 return
             }
-            // messagesを再構成
-            self.messages = posts.values.map { dic in
-                let senderId = dic["senderId"] ?? ""
-                let text = dic["text"] ?? ""
-                let displayName = dic["displayName"] ?? ""
-                return JSQMessage(senderId: senderId, displayName: displayName, text: text)
+            // keyとdateが入ったタプルを作る
+            var keyValueArray: [(String, Int)] = []
+            for (key, value) in posts {
+                keyValueArray.append((key: key, date: value["date"] as! Int))
             }
+            keyValueArray.sort{$0.1 < $1.1}             // タプルの中のdate でソートしてタプルの順番を揃える(配列で) これでkeyが順番通りになる
+            // messagesを再構成
+            var preMessages = [JSQMessage]()
+            for sortedTuple in keyValueArray {
+                for (key, value) in posts {
+                    if key == sortedTuple.0 {           // 揃えた順番通りにメッセージを作成
+                        let senderId = value["senderId"] as! String!
+                        let text = value["text"] as! String!
+                        let displayName = value["displayName"] as! String!
+                        preMessages.append(JSQMessage(senderId: senderId, displayName: displayName, text: text))
+                    }
+                }
+            }
+            self.messages = preMessages
+            
             self.collectionView.reloadData()
         })
     }
@@ -81,7 +94,7 @@ class ViewController: JSQMessagesViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         inputToolbar.contentView.textView.text = ""
         let ref = FIRDatabase.database().reference()
-        ref.child("messages").childByAutoId().setValue(["senderId": senderId, "text": text, "displayName": senderDisplayName])
+        ref.child("messages").childByAutoId().setValue(["senderId": senderId, "text": text, "displayName": senderDisplayName, "date": [".sv": "timestamp"]])
     }
 
     override func didReceiveMemoryWarning() {
